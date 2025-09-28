@@ -1,0 +1,2 @@
+# AK_RecruitmentAssistant
+アークナイツの公開求人タグ判定
