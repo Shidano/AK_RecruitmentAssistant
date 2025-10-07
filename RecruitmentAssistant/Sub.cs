@@ -4,6 +4,7 @@ using Windows.Storage.Streams;
 using Windows.Graphics.Imaging;
 using Windows.Media.Ocr;
 using System.Net.Http;
+using System.Diagnostics;
 namespace RecruitmentAssistant
 {
     internal static class Sub
@@ -11,22 +12,27 @@ namespace RecruitmentAssistant
         /// <summary>
         ///  改行区切りでタグを投入
         /// </summary>
-        internal static async Task<string> pushTagsAsync(string tags)
+        internal static bool pushTagsAsync(string tags, ref string result)
         {
             string url = "https://discordbot-riseicalculator.herokuapp.com/recruitment/";
 
-            var json = "{ \"text\" : \"" + tags+"\" }";
-
-            var content = new StringContent(json, Encoding.UTF8, "applicartion/json");
+            Dictionary<string, string> json = new Dictionary<string, string>();
+            json.Add("text", tags);
+            var jsonstring = System.Text.Json.JsonSerializer.Serialize(json);
+            var content = new StringContent(jsonstring, Encoding.UTF8, "application/json");
+            Trace.WriteLine(jsonstring);
             using (var client = new HttpClient())
             {
-                var response = await client.PostAsync(url, content);
+                var response = client.PostAsync(url, content).Result; 
+                Trace.WriteLine($"Status:{response.StatusCode}");
                 if (response.IsSuccessStatusCode)
                 {
-                    return await response.Content.ReadAsStringAsync();
+                    result = response.Content.ReadAsStringAsync().Result;
+                    return true;
                 }
                 else{
-                    return "Internet Error";
+                    result = $"Internet Error:{response.StatusCode}";
+                    return false;
                 }
             }
 

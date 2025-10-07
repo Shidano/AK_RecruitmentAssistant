@@ -10,7 +10,7 @@ namespace RecruitmentAssistant
     {
         public static string Lang = "ja";
         public static string ShowLangText = "ja_JP";
-        public static string ShowVerText = "ver.0.1";
+        public static string ShowVerText = "ver.0.2";
 
         public static List<string> TagList = new List<string>
         {
@@ -47,6 +47,7 @@ namespace RecruitmentAssistant
             "強制移動",
             "召喚",
             "元素",
+            "高空",
         };
 
         public static List<string[]> FixData = new List<string[]>
