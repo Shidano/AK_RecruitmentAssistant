@@ -74,7 +74,12 @@ namespace RecruitmentAssistant
                     toast.Show();
 
                     if (i == 5 && File.Exists(Path.Combine(FolderPath, TagData.SettingFolderPath, TagData.AutoDeleteFileName))){
-                        File.Delete(e.FullPath);
+                        Task.Run(async() =>
+                        {
+                            await Task.Delay(10000);
+                            File.Delete(e.FullPath);
+                        });
+                        
                         filename = "";
                     }
                 }
