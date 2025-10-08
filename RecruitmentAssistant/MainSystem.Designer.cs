@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecruitmentAssistant));
             notifyIcon1 = new NotifyIcon(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
-            exitToolStripMenuItem = new ToolStripMenuItem();
             verToolStripMenuItem = new ToolStripMenuItem();
             langToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,28 +50,28 @@
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { verToolStripMenuItem, langToolStripMenuItem, exitToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(211, 104);
-            // 
-            // exitToolStripMenuItem
-            // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(210, 24);
-            exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            contextMenuStrip1.Size = new Size(103, 76);
             // 
             // verToolStripMenuItem
             // 
             verToolStripMenuItem.Name = "verToolStripMenuItem";
-            verToolStripMenuItem.Enabled = false;
-            verToolStripMenuItem.Size = new Size(210, 24);
+            verToolStripMenuItem.Size = new Size(102, 24);
+            verToolStripMenuItem.Click += verToolStripMenuItem_Click;
             verToolStripMenuItem.Text = TagData.ShowVerText;
             // 
             // langToolStripMenuItem
             // 
-            langToolStripMenuItem.Name = "langToolStripMenuItem";
             langToolStripMenuItem.Enabled = false;
-            langToolStripMenuItem.Size = new Size(210, 24);
+            langToolStripMenuItem.Name = "langToolStripMenuItem";
+            langToolStripMenuItem.Size = new Size(102, 24);
             langToolStripMenuItem.Text = TagData.ShowLangText;
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(102, 24);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // RecruitmentAssistant
             // 

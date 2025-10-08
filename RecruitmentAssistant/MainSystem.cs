@@ -25,7 +25,7 @@ namespace RecruitmentAssistant
 
                 try
                 {
-                    if(filename == e.Name)
+                    if (filename == e.Name)
                     {
                         return;
                     }
@@ -70,7 +70,12 @@ namespace RecruitmentAssistant
 
                     var resDict = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(res);
 
-                    new Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder().AddText(resDict["title"]).AddInlineImage(new Uri(Path.Combine(FolderPath, Filename))).AddText(resDict["reply"]).Show();
+                    var toast = new Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder().AddText(resDict["title"]).AddInlineImage(new Uri(Path.Combine(FolderPath, Filename))).AddText(resDict["reply"]);
+                    toast.Show();
+
+                    if (i == 5 && File.Exists(Path.Combine(FolderPath, TagData.SettingFolderPath, TagData.AutoDeleteFileName))){
+                        File.Delete(e.FullPath);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -84,5 +89,13 @@ namespace RecruitmentAssistant
             Close();
         }
 
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = TagData.Github_ReadmeLink,
+                UseShellExecute = true,
+            });
+        }
     }
 }

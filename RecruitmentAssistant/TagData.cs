@@ -10,7 +10,10 @@ namespace RecruitmentAssistant
     {
         public static string Lang = "ja";
         public static string ShowLangText = "ja_JP";
-        public static string ShowVerText = "ver.0.2";
+        public static string ShowVerText = "ver.0.3";
+        public static string Github_ReadmeLink = "https://github.com/Shidano/AK_RecruitmentAssistant/blob/main/README.md";
+        public static string SettingFolderPath = "Settings";
+        public static string AutoDeleteFileName = "AutoDelete_true.txt";
 
         public static List<string> TagList = new List<string>
         {
