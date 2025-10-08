@@ -75,6 +75,7 @@ namespace RecruitmentAssistant
 
                     if (i == 5 && File.Exists(Path.Combine(FolderPath, TagData.SettingFolderPath, TagData.AutoDeleteFileName))){
                         File.Delete(e.FullPath);
+                        filename = "";
                     }
                 }
                 catch (Exception ex)
