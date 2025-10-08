@@ -1,4 +1,4 @@
-# AK_RecruitmentAssistant Ver.0.4
+# AK_RecruitmentAssistant ver.0.4
 アークナイツの公開求人タグ判定
 for Windows
 ## 使い方
