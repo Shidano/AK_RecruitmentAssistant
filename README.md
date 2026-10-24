@@ -2,7 +2,7 @@
 アークナイツの公開求人タグ判定
 for Windows
 ## 使い方
-[実行ファイル](https://drive.google.com/file/d/1L4uzVguiZQq7j3gNwILmrI-Lb4uO-bcU/view?usp=sharing)をダウンロードしてスクリーンショットフォルダに投入
+[実行ファイル](https://github.com/Shidano/AK_RecruitmentAssistant/releases/latest/download/RecruitmentAssistant.exe)をダウンロードしてスクリーンショットフォルダに投入
 
 実行中にスクリーンショットが追加されるとトースト通知で判定結果が出る
 
