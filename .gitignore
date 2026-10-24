@@ -1,0 +1,11 @@
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+RecruitmentAssistant/publish/
+*.exe
+*.dll
+*.pdb
